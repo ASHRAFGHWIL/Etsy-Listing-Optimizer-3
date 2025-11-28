@@ -34,13 +34,18 @@ export async function generateListing(productDescription: string, priorityKeywor
       - Avoid repetition of words.
       - Critically, place the most important, highest-volume keywords at the very beginning of the title. This is vital for Etsy's search algorithm.${priorityKeyword ? ' It MUST start with the priority keyword.' : ' If no priority keyword is provided, the title MUST start with the top keyword from your generated list.'}
     - Description: Create a compelling, professional Etsy description (approx 800-1000 characters).
-      - STRUCTURE & FORMAT: You MUST visually divide the description into distinct sections using the "What, Why, How" framework. Use Markdown formatting (bold headers, bullet points) to ensure readability.
-        - Section 1: **What It Is**: Clearly describe the product and who it is for.
-        - Section 2: **Why You'll Love It**: Highlight the benefits, emotional value, and the specific problem it solves.
-        - Section 3: **How It's Made / Details**: List technical features, materials, dimensions, and care instructions. Use bullet points here for easy scanning.
-      - Readability: Use short paragraphs (2-3 sentences max), ample whitespace between sections, and bullet points. Avoid large walls of text.
+      - STRUCTURE & FORMAT: **STRICT VERTICAL LAYOUT**. Do NOT write long paragraphs. Present the content as a beautiful, easy-to-scan vertical list using the "What, Why, How" framework.
+      - VISUAL STYLE: Use Markdown formatting. Use bullet points (•) or emoji bullets for EVERY single point. Add distinct line breaks between sections.
+        - Section 1 Header: **✨ What It Is**
+          - (Use vertical bullet points here to describe features).
+        - Section 2 Header: **💖 Why You'll Love It**
+          - (Use vertical bullet points here to highlight benefits/emotions).
+        - Section 3 Header: **🛠️ How It's Made / Details**
+          - (Use vertical bullet points here for technical specs/dimensions).
+      - Emojis: Use professional emojis in headers and as bullet points to make it look aesthetic and organized.
+      - Readability: MAXIMIZE WHITE SPACE. One point per line. No walls of text.
       - Strategy: Naturally integrate the top search queries (keywords) provided.
-      - Call to Action: End with a clear, persuasive Call to Action (CTA) encouraging the purchase.
+      - Call to Action: End with a clear, persuasive Call to Action (CTA) encouraging the purchase (e.g., "🛒 Add to cart now!") on its own line with an emoji.
     - Keywords: Exactly 13 keyword objects.
       - STRATEGY: You MUST diversify the keywords to capture different search intents.
         1. **Technical/Descriptive Terms**: Include terms describing materials, specific style, and what the item literally is (e.g., "leather journal", "minimalist art", "linen dress").

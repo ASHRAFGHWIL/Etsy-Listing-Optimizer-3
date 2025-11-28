@@ -28,7 +28,10 @@ export async function generateListing(productDescription: string, priorityKeywor
     }
 
     Ensure all constraints are met:
-    - Title: Strictly between 3 and 14 words long. Max 140 characters. Focus on readability and effectiveness.
+    - Title: Create a high-converting, keyword-rich Etsy title.
+      - LENGTH: Strictly between 3 and 16 words long. Max 140 characters.
+      - REFERENCE EXAMPLE: "Ramadan Lantern SVG, Laser Cut Night Light File, Wooden Lamp DIY Kit, Islamic Decor Glowforge Design"
+      - STRUCTURE: Use comma-separated keyword phrases (e.g. "Main Keyword, Feature Phrase, Usage Context").
       - DO NOT use the words: "png", "download", "cute".
       - Avoid subjective adjectives that aren't specific (like "cute", "nice").
       - Avoid repetition of words.
@@ -47,24 +50,29 @@ export async function generateListing(productDescription: string, priorityKeywor
       - Strategy: Naturally integrate the top search queries (keywords) provided.
       - Call to Action: End with a clear, persuasive Call to Action (CTA) encouraging the purchase (e.g., "🛒 Add to cart now!") on its own line with an emoji.
     - Keywords: Exactly 13 keyword objects.
-      - STRATEGY: You MUST diversify the keywords to capture different search intents.
-        1. **Technical/Descriptive Terms**: Include terms describing materials, specific style, and what the item literally is (e.g., "leather journal", "minimalist art", "linen dress").
-        2. **Emotional/Occasional/Recipient Terms**: Include terms describing *why* people buy it, feelings, occasions, or recipients (e.g., "gift for writer", "cozy home vibe", "wedding keepsake", "travel lover").
+      - STRATEGY: You MUST utilize all 13 keyword tags. Diversify them strictly across these 3 categories to maximize search reach:
+        1. **Technical/Descriptive**: Specifics about the item, materials, style (e.g., "linen dress", "abstract print").
+        2. **Occasion**: Events or holidays (e.g., "wedding gift", "housewarming", "christmas").
+        3. **Recipient**: Who is it for? (e.g., "gift for her", "dad birthday", "dog mom").
       - "keyword": A 2 or 3 word string, max 20 characters. Optimized for high search volume on Etsy and Google for US and European markets.
       - "volume": The estimated search volume, categorized as "High", "Medium", or "Low".
       - "reason": A brief explanation (max 100 characters) for why this keyword is recommended.
       - The list must be sorted with the highest search volume keywords appearing first.
     - Category: The single most accurate Etsy category.
     - Materials: Exactly 13 relevant materials.
-    - Attributes: Generate between 3 to 5 relevant product attributes as a key-value JSON object. Examples: "Color": "Brown", "Style": "Vintage", "Occasion": "Wedding".
+    - Attributes: Generate between 5 to 8 relevant product attributes as a key-value JSON object to help buyers filter searches.
+      - INCLUDE SPECIFIC ETSY ATTRIBUTES: "File Type" (for digital), "Craft Type" (e.g. Sewing, Woodworking), "Occasion" (e.g. Wedding, Birthday), "Holiday" (e.g. Christmas), "Primary Color", "Secondary Color", "Style", "Theme".
     - Colors: Generate between 5 to 7 relevant and popular color names for this product. These should be terms people are likely to search for (e.g., "Forest Green", "Rose Gold", "Matte Black").
     - Store Sections: Generate between 5 to 7 relevant store section names. These should be SEO-friendly categories a seller could use to group this product with similar items in their Etsy shop (e.g., "Gifts for Her", "Wall Art Prints", "Handmade Jewelry").
-    - Pricing Suggestions: Generate exactly 3 pricing suggestions for this product in USD, based on competitive analysis from search results. Each suggestion must include:
-      - "tier": A string, must be one of "Budget", "Standard", or "Premium".
-      - "price": A number representing the price in USD.
-      - "currency": A string, which MUST be "USD".
-      - "reason": A brief explanation (max 100 characters) for this pricing tier, considering market competition and perceived value.
-      - The list must be ordered with Budget first, then Standard, then Premium.
+    - Pricing Suggestions: Generate exactly 3 pricing suggestions for this product in USD.
+      - ANALYZE: Analyze competitor pricing for similar detailed digital product bundles to validate your chosen tiers (Budget, Standard, Premium).
+      - GOAL: Ensure the prices strike a balance between profitability and competitiveness in the current market.
+      - Each suggestion must include:
+        - "tier": A string, must be one of "Budget", "Standard", or "Premium".
+        - "price": A number representing the price in USD.
+        - "currency": A string, which MUST be "USD".
+        - "reason": A brief explanation (max 100 characters) for this pricing tier, considering market competition and perceived value.
+        - The list must be ordered with Budget first, then Standard, then Premium.
     - Checklist: Generate exactly 6 actionable optimization steps specific to this product.
       - Cover these elements: Title, Photos, Description, Pricing, Tags, Attributes.
       - "element": The part of the listing (e.g., "Photos").
@@ -205,7 +213,8 @@ export async function generateAlternativeTitles(
     Constraints for each new title:
     - Must be unique and different from the original title.
     - Must be highly relevant to the product.
-    - Strictly between 3 and 14 words long. Max 140 characters.
+    - Strictly between 3 and 16 words long. Max 140 characters.
+    - REFERENCE EXAMPLE: "Ramadan Lantern SVG, Laser Cut Night Light File, Wooden Lamp DIY Kit, Islamic Decor Glowforge Design"
     - DO NOT use the words: "png", "download", "cute".
     - Avoid subjective adjectives.
     - Avoid repetition of words.
